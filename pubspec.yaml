@@ -1,0 +1,16 @@
+name: arch_lint
+description: Regras de lint customizadas para validar a Clean Architecture do projeto.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  analyzer: ^8.4.0
+  analyzer_plugin: ^0.13.10
+  custom_lint_builder: ^0.8.1
+
+dev_dependencies:
+  test: ^1.24.0
+  custom_lint_core: ^0.8.1

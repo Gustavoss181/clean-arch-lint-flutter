@@ -1,0 +1,23 @@
+# analysis_options.yaml — projeto raiz
+#
+# O custom_lint injeta os plugins listados em pubspec.yaml > dev_dependencies
+# e roda junto com `dart analyze` / flutter analyze`.
+
+analyzer:
+  plugins:
+    - custom_lint
+
+# Configuração das regras do arch_lint.
+# Você pode desativar ou rebaixar a severidade de qualquer regra aqui.
+custom_lint:
+  rules:
+    # Erros críticos de arquitetura — mantidos como ERROR por padrão
+    - domain_must_not_import_data: true
+    - domain_must_not_import_presentation: true
+    - presentation_must_not_import_data: true
+
+    # Cross-feature é WARNING — útil como aviso enquanto refatora legacy
+    - no_cross_feature_import: true
+    # Para rebaixar para info durante uma migração gradual:
+    # - no_cross_feature_import:
+    #     severity: info
